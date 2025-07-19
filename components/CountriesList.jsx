@@ -10,14 +10,17 @@ export default function CountriesList({ query, region }) {
     fetch('https://restcountries.com/v3.1/all?fields=name,flag,population,region,capital,flags')
       .then((res) => res.json())
       .then((data) => {
-        setCountriesData(data)
+        // 🔤 Sort data alphabetically by country name before setting state
+        const sortedData = data.sort((a, b) =>
+          a.name.common.localeCompare(b.name.common)
+        )
+        setCountriesData(sortedData)
       })
       .catch((err) => {
         console.error("Failed to fetch countries:", err)
       })
   }, [])
 
-  // 🟢 Use your custom hook
   const filteredCountries = useFilter(countriesData, query, region)
 
   if (!countriesData.length) {
