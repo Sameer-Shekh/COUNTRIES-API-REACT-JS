@@ -1,5 +1,0 @@
-# THESE ARE THE SCRIPT THAT IS USED TO START THE PROJECT SERVER
-# scripts": {
-# "start": "parcel index.html" FOR THIS TO RUN THE COMMAND WILL BE NPM START 
-# "dev":"parcel index.html" FOR THIS TO RUN COMMAND WILL BE NPM RUN DEV
-#  }
